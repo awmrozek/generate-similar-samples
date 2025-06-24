@@ -3,6 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
 
+def generate_dataset(seed, num_samples, p, med1, med2, std_dev1, std_dev2):
+    np.random.seed(seed)
+    df = pd.DataFrame({
+        "Category1": np.random.choice(["A", "B", "C", "D", "E"],
+                                      num_samples, p)
+        "Value1": np.random.normal(med1, std_dev1, num_samples)
+        "Value2": np.random.normal(med2, std_dev2, num_samples)
+    return df
+
 def generate_original_dataset():
     """Generate the original dataset as specified"""
     np.random.seed(42)
