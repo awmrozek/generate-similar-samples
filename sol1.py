@@ -18,7 +18,6 @@ if __name__ == "__main__":
     # Generate datasets
     original_df = generate_original_dataset()
 
-    # Get distribution parameters (fixed the unpacking)
     params = get_distribution_params(original_df, "Value1")
     average = params['mean']
     std_dev = params['std_deviation']
@@ -37,7 +36,7 @@ if __name__ == "__main__":
     # category_probs = [1, 0, 0, 0, 0]
     new_df = generate_dataset(
         seed=123,  # Different seed for variation
-        num_samples=500,
+        num_samples=1000,
         p=category_probs,
         avg1=average,
         avg2=params2['mean'],
